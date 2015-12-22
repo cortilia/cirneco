@@ -12,6 +12,7 @@ install:
 before_script:
   - pip install --user codecov
   - curl http://www.jpm4j.org/install/script | sh
+  - jpm install com.codacy:codacy-coverage-reporter:assembly
 
 script:
   - jdk_switcher use oraclejdk8
