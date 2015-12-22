@@ -30,6 +30,7 @@ after_success:
   - export CODACY_PROJECT_TOKEN=b48fe5350c734384a74eca50cfc307cc
   - codacy-coverage-reporter -l Java -r coverage.xml
   - codacy-coverage-reporter -l Java -r target/site/jacoco/jacoco.xml --prefix src/main/java/
+  - codacy-coverage-reporter -l Java -r hamcrest-extensions/hamcrest-extensions-jdk7/target/site/jacoco/jacoco.xml --prefix hamcrest-extensions/hamcrest-extensions-jdk7/src/main/java/
 
 notifications:
     email:
