@@ -7,8 +7,7 @@ jdk:
     - oraclejdk7
 
 before_install:
-  - sudo mkdir -p /var/jpm
-  - sudo curl http://www.jpm4j.org/install/script | sh
+  - sudo curl -o --create-dirs http://www.jpm4j.org/install/script | sh
 
 install:
   - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
