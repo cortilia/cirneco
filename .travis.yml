@@ -7,10 +7,10 @@ jdk:
     - oraclejdk7
 
 before_install:
-  - curl http://www.jpm4j.org/install/script | sh
+  - sudo curl http://www.jpm4j.org/install/script | sh
 
 install:
-  - jpm install com.codacy:codacy-coverage-reporter:assembly
+  - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
 #    true
 
 before_script:
