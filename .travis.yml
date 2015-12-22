@@ -6,17 +6,13 @@ jdk:
     - oraclejdk8
     - oraclejdk7
 
-before_install:
-  - sudo curl http://www.jpm4j.org/install/script | sudo sh
-  - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
-
 install:
-  - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
-#    true
+    true
 
 before_script:
   - pip install --user codecov
-#  - jpm install com.codacy:codacy-coverage-reporter:assembly
+  - curl http://www.jpm4j.org/install/script | sudo sh
+  - jpm install com.codacy:codacy-coverage-reporter:assembly
 
 script:
   - jdk_switcher use oraclejdk8
