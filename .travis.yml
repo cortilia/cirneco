@@ -6,7 +6,7 @@ jdk:
     - oraclejdk8
     - oraclejdk7
 
-before_install
+before_install:
   - curl http://www.jpm4j.org/install/script | sh
 
 install:
