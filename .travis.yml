@@ -1,6 +1,6 @@
 language: java
 
-sudo: true # faster builds
+sudo: false # faster builds
 
 jdk:
     - oraclejdk8
@@ -12,7 +12,7 @@ install:
 before_script:
   - pip install --user codecov
   - curl http://www.jpm4j.org/install/script | sh
-  - jpm install com.codacy:codacy-coverage-reporter:assembly
+#  - jpm install com.codacy:codacy-coverage-reporter:assembly
 
 script:
   - jdk_switcher use oraclejdk8
@@ -27,6 +27,8 @@ after_success:
   - jdk_switcher use oraclejdk7
   - mvn clean test jacoco:report coveralls:report -pl !:hamcrest-extensions-jdk8
   - codecov -b "$TRAVIS_JOB_NUMBER-jdk7"
+  - export CODACY_PROJECT_TOKEN=%Project_Token%
+  - codacy-coverage-reporter -l Java -r target/site/jacoco/jacoco.xml --prefix src/main/java/
 
 notifications:
     email:
