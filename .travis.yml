@@ -8,7 +8,6 @@ jdk:
 
 before_install:
   - sudo curl http://www.jpm4j.org/install/script | sudo sh
-  - sudo jpm -version
   - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
 
 install:
