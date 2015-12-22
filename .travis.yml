@@ -12,7 +12,7 @@ install:
 before_script:
   - pip install --user codecov
   - curl http://www.jpm4j.org/install/script | sudo sh
-  - jpm install com.codacy:codacy-coverage-reporter:assembly
+  - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
 
 script:
   - jdk_switcher use oraclejdk8
@@ -28,6 +28,7 @@ after_success:
   - mvn clean test jacoco:report coveralls:report -pl !:hamcrest-extensions-jdk8
   - codecov -b "$TRAVIS_JOB_NUMBER-jdk7"
   - export CODACY_PROJECT_TOKEN=b48fe5350c734384a74eca50cfc307cc
+  - codacy-coverage-reporter -l Java -r coverage.xml
   - codacy-coverage-reporter -l Java -r target/site/jacoco/jacoco.xml --prefix src/main/java/
 
 notifications:
