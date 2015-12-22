@@ -7,6 +7,7 @@ jdk:
     - oraclejdk7
 
 before_install:
+  - sudo mkdir var/jpm
   - sudo curl http://www.jpm4j.org/install/script | sh
 
 install:
