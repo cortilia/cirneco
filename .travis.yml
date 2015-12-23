@@ -26,7 +26,7 @@ after_success:
   - jdk_switcher use oraclejdk8
   - mvn clean test jacoco:report coveralls:report
   - codecov -b "$TRAVIS_JOB_NUMBER-jdk8"
-  - codacy-coverage-reporter -l Java -r hamcrest-extensions/hamcrest-extensions-jdk7/target/site/jacoco/jacoco.xml --prefix hamcrest-extensions/hamcrest-extensions-jdk7/src/main/java/
+  - codacy-coverage-reporter -l Java -r hamcrest-extensions/hamcrest-extensions-jdk8/target/site/jacoco/jacoco.xml --prefix hamcrest-extensions/hamcrest-extensions-jdk8/src/main/java/
   # JDK 7
   - jdk_switcher use oraclejdk7
   - mvn clean test jacoco:report coveralls:report -pl !:hamcrest-extensions-jdk8
