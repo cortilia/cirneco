@@ -89,7 +89,7 @@ Some libraries are not using _Hamcrest v.2.0.0.0_. It may be necessary to explic
   </exclusions>
 </dependency>
 ```
-
+Othwrwise, just put the Cirneco dependencies before to import these dependencies. I suggest to use [Maven dependency tree resolver](https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html) to detect which library is shipped with _Hamcrest 1.3.3_.
 
 # What does it mean Cirneco?
 Maybe you are curious about the name Cirneco. Cirneco dell'Etna is a unique dog native of Sicily, Italy.
